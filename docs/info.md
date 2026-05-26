@@ -1,20 +1,42 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+# Logic Gate Example - Tiny Tapeout Project
 
 ## How it works
 
-Explain how your project works
+This project is a simple Tiny Tapeout digital design written in Verilog.  
+It demonstrates four basic logic gate operations:
 
-## How to test
+- AND Gate
+- OR Gate
+- XOR Gate
+- NOT Gate
 
-Explain how to use your project
+The project takes inputs from the Tiny Tapeout input pins and produces outputs based on the logic operation.
 
-## External hardware
+### Input Pins
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+| Pin | Function |
+|-----|----------|
+| `ui_in[0]` | AND input A |
+| `uio_in[0]` | AND input B |
+| `ui_in[1]` | OR input A |
+| `uio_in[1]` | OR input B |
+| `ui_in[2]` | XOR input A |
+| `uio_in[2]` | XOR input B |
+| `ui_in[3]` | NOT input |
+
+### Output Pins
+
+| Pin | Function |
+|-----|----------|
+| `uo_out[0]` | AND output |
+| `uo_out[1]` | OR output |
+| `uo_out[2]` | XOR output |
+| `uo_out[3]` | NOT output |
+
+### Verilog Logic
+
+```verilog
+assign uo_out[0] = ui_in[0] & uio_in[0];
+assign uo_out[1] = ui_in[1] | uio_in[1];
+assign uo_out[2] = ui_in[2] ^ uio_in[2];
+assign uo_out[3] = ~ui_in[3];
