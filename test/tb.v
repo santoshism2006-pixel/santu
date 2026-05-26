@@ -4,7 +4,7 @@
 
 `timescale 1ns/1ps
 
-module tb_tt_um_logic_example;
+module tb;
 
     // Testbench signals
     reg  [7:0] ui_in;
