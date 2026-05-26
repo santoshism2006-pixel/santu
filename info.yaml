@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title: "Logic Gate Example"
+  title: "ALU Design"
   author: "Santoshi"
   discord: "Santoshi2006"
   description: "A simple Tiny Tapeout project demonstrating AND, OR, XOR, and NOT logic operations using Verilog."
@@ -15,7 +15,7 @@ project:
 
   # Source files
   source_files:
-    - "project.v"
+    - "alu.v"
 
 # Pinout information
 pinout:
