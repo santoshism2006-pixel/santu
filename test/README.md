@@ -1,47 +1,30 @@
-# Sample testbench for a Tiny Tapeout project
+# Tiny Tapeout Logic Example
 
-This is a sample testbench for a Tiny Tapeout project. It uses [cocotb](https://docs.cocotb.org/en/stable/) to drive the DUT and check the outputs.
-See below to get started or for more information, check the [website](https://tinytapeout.com/hdl/testing/).
+This project is a simple Tiny Tapeout design that demonstrates basic digital logic operations using Verilog.
 
-## Setting up
+## Project Description
 
-1. Edit [Makefile](Makefile) and modify `PROJECT_SOURCES` to point to your Verilog files.
-2. Edit [tb.v](tb.v) and replace `tt_um_example` with your module name.
+The module performs the following operations:
 
-## How to run
+| Output Pin | Operation |
+|------------|------------|
+| `uo_out[0]` | AND operation |
+| `uo_out[1]` | OR operation |
+| `uo_out[2]` | XOR operation |
+| `uo_out[3]` | NOT operation |
+| `uo_out[7:4]` | Always 0 |
 
-To run the RTL simulation:
+The design uses:
+- `ui_in` as primary input signals
+- `uio_in` as secondary input signals
+- `uo_out` as output signals
 
-```sh
-make -B
-```
+---
 
-To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
+## Verilog Module
 
-Then run:
-
-```sh
-make -B GATES=yes
-```
-
-If you wish to save the waveform in VCD format instead of FST format, edit tb.v to use `$dumpfile("tb.vcd");` and then run:
-
-```sh
-make -B FST=
-```
-
-This will generate `tb.vcd` instead of `tb.fst`.
-
-## How to view the waveform file
-
-Using GTKWave
-
-```sh
-gtkwave tb.fst tb.gtkw
-```
-
-Using Surfer
-
-```sh
-surfer tb.fst
-```
+```verilog
+assign uo_out[0] = ui_in[0] & uio_in[0];
+assign uo_out[1] = ui_in[1] | uio_in[1];
+assign uo_out[2] = ui_in[2] ^ uio_in[2];
+assign uo_out[3] = ~ui_in[3];
