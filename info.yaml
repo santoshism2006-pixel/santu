@@ -1,8 +1,8 @@
 # Tiny Tapeout project information
 project:
   title: "Logic Gate Example"
-  author: "Your Name"
-  discord: "your_discord_name"
+  author: "Santoshi"
+  discord: "Santoshi2006"
   description: "A simple Tiny Tapeout project demonstrating AND, OR, XOR, and NOT logic operations using Verilog."
   language: "Verilog"
   clock_hz: 0
